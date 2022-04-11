@@ -1,10 +1,11 @@
 //Global Variables
 int appWidth, appHeight;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
+color yellow=#FFFF00, purple=#FF00FF, buttonColour, resetWhite=#FFFFFF;//Notice Nightmode blue values
 //
 void setup() 
 { 
-  size(400,300); //fullScreen(), displayWidth, displayHeight
+  size(400, 300); //fullScreen(), displayWidth, displayHeight
   //Landscape, not portrait or square
   String landscape = "You are good to go!";
   String portrait = "Turn your phone";
@@ -27,7 +28,12 @@ void draw()
 {
   //DisplayOritentation Finishing Code
   //
-  buttonColour= purple;
+  if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight) {//Hover Over Effect
+    buttonColour= yellow;
+  } else {
+    buttonColour= purple;
+  }//End Hover Over Effect
+  //
   fill(buttonColour);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
   fill(resetWhite); //Not night mode compatible, must change
@@ -41,7 +47,6 @@ void keyPressed()
 //
 void mousePressed() 
 {
-  
 }//End mousePressed
 //
 //End Main Program
