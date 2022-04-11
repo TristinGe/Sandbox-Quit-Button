@@ -25,7 +25,12 @@ void setup()
 //
 void draw() 
 {
+  //DisplayOritentation Finishing Code
+  //
+  buttonColour= purple;
+  fill(buttonColour);
   rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight );
+  fill(resetWhite); //Not night mode compatible, must change
 }//End draw
 //
 void keyPressed() 
